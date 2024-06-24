@@ -13,6 +13,11 @@ sht() {
   echo "Running shellcheck on $script"
   shellcheck $script
 
+  if [[ ! -d "sht_logs" ]]; then
+      echo "Creating directory sht_logs"
+      mkdir -p sht_logs
+  fi
+
   echo "Running strace on $script"
   strace -o "sht_logs/{script}_trace.txt" -f bash "$script"
 
