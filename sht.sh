@@ -14,7 +14,7 @@ sht() {
   shellcheck $script
 
   echo "Running strace on $script"
-  strace -o "${script}_trace.log.txt" -f bash "$script"
+  strace -o "sht_logs/{script}_trace.txt" -f bash "$script"
 
-  echo "Saved strace output to ${script}"
+  echo "Saved strace output to sht_logs/${script}_trace.txt"
 }
